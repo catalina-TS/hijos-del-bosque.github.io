@@ -1,0 +1,292 @@
+/* ============================== */
+/* Global Styles */
+/* ============================== */
+
+html {
+    scroll-behavior: smooth;
+    /* Añade desplazamiento suave */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ============================== */
+/* Body Layout */
+/* ============================== */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'nav'
+        'main'
+        'footer';
+}
+
+/* ============================== */
+/* Navigation Bar */
+/* ============================== */
+
+nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #5a8f8d;
+    ;
+    color: whitesmoke;
+    gap: 10px;
+}
+
+nav i {
+    font-size: 2em;
+}
+
+.principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.principal h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.principal h2 {
+    display: none;
+}
+
+.principal img {
+    width: 50px;
+}
+
+
+.menu-mobile ul {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-mobile li {
+    list-style: none;
+}
+
+.custom-link {
+    text-decoration: none;
+    /* Elimina el subrayado */
+    color: inherit;
+    /* Mantiene el color del texto */
+    font-weight: normal;
+    /* Peso de la fuente normal */
+}
+
+.custom-link:hover {
+    font-weight: bold;
+    /* Engrosa la letra al pasar el mouse */
+}
+
+.menu {
+    display: none;
+}
+
+/* ============================== */
+/* Main Content */
+/* ============================== */
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Option Cards */
+
+.option-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+.option2-cards{
+    display: none;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    border: 2px solid rgba(26, 25, 25, 0.349);
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.card:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 20px;
+}
+
+.character-card {
+    display: none;
+}
+
+
+
+/* ============================== */
+/* Footer */
+/* ============================== */
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #486e6c;
+    color: whitesmoke;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.contact-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* ============================== */
+/* Versión de escritorio */
+/* ============================== */
+
+@media (min-width: 576px) {
+    body {
+        grid-template-columns: 1fr 4fr;
+        grid-template-areas:
+            'nav main'
+            'footer footer';
+        height: 100vh;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+
+
+    nav {
+        flex-direction: column;
+        justify-content: start;
+        height: 100%;
+        gap: 30px;
+        border-radius: 5px;
+        background-color: #5a8f8d;
+    }
+
+    .principal {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .principal h1 {
+        font-size: 2.5em;
+    }
+
+    .principal h2 {
+        display: block;
+        font-size: 1.5em;
+    }
+
+    .menu-mobile {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        list-style: none;
+    }
+
+    .menu a {
+        color: whitesmoke;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+
+    .menu a:hover {
+        transform: scale(1.05);
+    }
+
+
+    .option-cards {
+        display: none;
+    }
+
+    .tittle h1 {
+        display: none;
+    }
+
+    .character-card {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0px;
+        padding: 20px;
+    }
+
+    .card {
+        background-color: #f8e9d4;
+        gap: 10px;
+    }
+
+    .card:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .card h1 {
+        margin: 10px;
+    }
+
+    footer {
+        background-color: rgb(26, 25, 25);
+    }
+
+}
